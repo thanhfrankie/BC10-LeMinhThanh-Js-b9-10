@@ -1,3 +1,0 @@
-function themNhanVien() {
-    document.qs
-}
