@@ -34,6 +34,7 @@ function layThongTinTuForm() {
   var ngayLam = document.getElementById("datepicker").value;
   var luongCB = document.getElementById("tbLuongCB").value * 1;
   var selectChucvu = document.getElementById("chucvu").value
+  var chucVu = document.getElementById("tbChucVu");
   var gioLam = document.getElementById("tbGiolam").value * 1;
   var tongLuong = 0;
   var xepLoai = "";

@@ -1,7 +1,7 @@
 var dsnv = [];
 var dataJson = localStorage.getItem("dsnv");
 console.log("JSON", dataJson);
-var arrayNv = JSON.parse(dataJson) || [];
+var arrayNv = JSON.parse(dataJson) || []; 
 // duyệt mảng => convert object => object từ class
 for (var i = 0; i < arrayNv.length; i++) {
   var data = arrayNv[i];
@@ -12,26 +12,20 @@ for (var i = 0; i < arrayNv.length; i++) {
     arrayNv[i].email,
     arrayNv[i].ngayLam,
     arrayNv[i].luongCB,
-    arrayNv[i].selectChucvu,
+    arrayNv[i].chucVu,
     arrayNv[i].gioLam
   );
   dsnv.push(sv);
 }
-renderDSNV();
+renderDSNV()
 function themNguoiDung() {
-  var nv = layThongTinTuForm();
-  dsnv.push(nv);
-  // em ko biết sao cái ô email lại nhận giá trị của ô password trong khi em ko show lên a @@
-  var chucVuNv = nv.selectChucvu;
-  console.log(nv.selectChucvu);
+var nv = layThongTinTuForm()
+  dsnv.push(nv)
+ // em ko cập nhật được cái 
+  var chucVuNv = nv.chucVu
+  console.log(chucVuNv)
   if (nv.selectChucvu === "Sếp") {
-    document.getElementById("tbChucVu").innerText = ` Sếp`;
-  }
-  if (nv.selectChucvu === "Trưởng phòng") {
-    document.getElementById("tbChucVu").innerText = ` Trưởng phòng`;
-  }
-  if (nv.selectChucvu === "Nhân viên") {
-    document.getElementById("tbChucVu").innerText = ` Nhân viên`;
+    chucVuNv= `Sếp`
   }
   if (chucVuNv === "Sếp") {
     tongLuong = luongCB * 3;
@@ -66,8 +60,6 @@ function xoaNv(id) {
     }
   }
   dsnv.splice(index, 1);
-  var dataJson = JSON.stringify(dsnv);
-  localStorage.setItem("dsnv", dataJson);
   renderDSNV();
 }
 function suaNv(id) {
@@ -88,7 +80,7 @@ function suaNv(id) {
 }
 function capNhatNv() {
   var nv = layThongTinTuForm();
-  var index;
+  var index
   for (var i = 0; i < dsnv.length; i++) {
     if (dsnv[i].tk == nv.tk) {
       index = i;

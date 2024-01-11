@@ -12,7 +12,7 @@ for (var i = 0; i < arrayNv.length; i++) {
     arrayNv[i].email,
     arrayNv[i].ngayLam,
     arrayNv[i].luongCB,
-    arrayNv[i].selectChucvu,
+    arrayNv[i].chucVu,
     arrayNv[i].gioLam
   );
   dsnv.push(sv);
@@ -21,26 +21,20 @@ renderDSNV();
 function themNguoiDung() {
   var nv = layThongTinTuForm();
   dsnv.push(nv);
-  // em ko biết sao cái ô email lại nhận giá trị của ô password trong khi em ko show lên a @@
+  // em ko cập nhật được cái chức vụ lên ô chức vụ ạ
   var chucVuNv = nv.selectChucvu;
   console.log(nv.selectChucvu);
   if (nv.selectChucvu === "Sếp") {
     document.getElementById("tbChucVu").innerText = ` Sếp`;
   }
-  if (nv.selectChucvu === "Trưởng phòng") {
-    document.getElementById("tbChucVu").innerText = ` Trưởng phòng`;
-  }
-  if (nv.selectChucvu === "Nhân viên") {
-    document.getElementById("tbChucVu").innerText = ` Nhân viên`;
-  }
-  if (chucVuNv === "Sếp") {
+  if (selectChucvu === "Sếp") {
     tongLuong = luongCB * 3;
   }
 
-  if (chucVuNv === "Trưởng phòng") {
+  if (selectChucvu === "Trưởng phòng") {
     tongLuong = luongCB * 2;
   }
-  if (chucVuNv === "Nhân viên") {
+  if (selectChucvu === "Nhân viên") {
     tongLuong = luongCB;
   }
   if (gioLam >= 192) {

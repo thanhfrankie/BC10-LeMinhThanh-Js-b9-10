@@ -21,7 +21,7 @@ renderDSNV();
 function themNguoiDung() {
   var nv = layThongTinTuForm();
   dsnv.push(nv);
-  // em ko biết sao cái ô email lại nhận giá trị của ô password trong khi em ko show lên a @@
+  // em ko cập nhật được cái chức vụ lên ô chức vụ ạ
   var chucVuNv = nv.selectChucvu;
   console.log(nv.selectChucvu);
   if (nv.selectChucvu === "Sếp") {
@@ -30,8 +30,8 @@ function themNguoiDung() {
   if (nv.selectChucvu === "Trưởng phòng") {
     document.getElementById("tbChucVu").innerText = ` Trưởng phòng`;
   }
-  if (nv.selectChucvu === "Nhân viên") {
-    document.getElementById("tbChucVu").innerText = ` Nhân viên`;
+  if (nv.selectChucvu === "Sếp") {
+    document.getElementById("tbChucVu").innerText = ` Sếp`;
   }
   if (chucVuNv === "Sếp") {
     tongLuong = luongCB * 3;

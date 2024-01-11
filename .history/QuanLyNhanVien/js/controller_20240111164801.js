@@ -8,7 +8,7 @@ function renderDSNV() {
                         <td>${data.ten}</td>
                         <td>${data.email}</td>
                         <td>${data.ngayLam}</td>
-                        <td>${data.selectChucvu}</td>
+                        <td>${data.chucVu}</td>
                         <td>${data.luongCB}</td>
                         <td>
                         <button
@@ -33,8 +33,9 @@ function layThongTinTuForm() {
   var password = document.getElementById("password").value;
   var ngayLam = document.getElementById("datepicker").value;
   var luongCB = document.getElementById("tbLuongCB").value * 1;
-  var selectChucvu = document.getElementById("chucvu").value
+  var chucVu = document.getElementById("tbChucVu").value;
   var gioLam = document.getElementById("tbGiolam").value * 1;
+  var selectChucvu = document.getElementById("chucvu")
   var tongLuong = 0;
   var xepLoai = "";
   var nv = {
@@ -44,7 +45,6 @@ function layThongTinTuForm() {
     password: password,
     ngayLam: ngayLam,
     luongCB: luongCB,
-    selectChucvu: selectChucvu,
     chucVu: chucVu,
     gioLam: gioLam,
   };
