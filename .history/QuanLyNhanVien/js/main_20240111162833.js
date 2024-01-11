@@ -74,15 +74,3 @@ function suaNv(id) {
   document.getElementById("tbChucVu").value = nv.chucVu;
   document.getElementById("tbLuongCB").value = nv.luongCB;
 }
-function capNhatNv() {
-  var nv = layThongTinTuForm();
-  var index;
-  for (var i = 0; i < dsnv.length; i++) {
-    if (dsnv[i].tk == nv.tk) {
-      index = i;
-    }
-  }
-  // cập nhật data tại vị trí index
-  dsnv[index] = nv;
-  renderDSNV();
-}

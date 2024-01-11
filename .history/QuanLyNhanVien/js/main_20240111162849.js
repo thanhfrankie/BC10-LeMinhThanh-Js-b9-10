@@ -78,11 +78,11 @@ function capNhatNv() {
   var nv = layThongTinTuForm();
   var index;
   for (var i = 0; i < dsnv.length; i++) {
-    if (dsnv[i].tk == nv.tk) {
+    if (dsnv[i].ma == sv.ma) {
       index = i;
     }
   }
   // cập nhật data tại vị trí index
-  dsnv[index] = nv;
-  renderDSNV();
+  dsnv[index] = sv;
+  renderDSSV();
 }

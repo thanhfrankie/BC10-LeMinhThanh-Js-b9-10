@@ -74,15 +74,15 @@ function suaNv(id) {
   document.getElementById("tbChucVu").value = nv.chucVu;
   document.getElementById("tbLuongCB").value = nv.luongCB;
 }
-function capNhatNv() {
-  var nv = layThongTinTuForm();
+function capNhatSv() {
+  var sv = layThongTinTuForm();
   var index;
-  for (var i = 0; i < dsnv.length; i++) {
-    if (dsnv[i].tk == nv.tk) {
+  for (var i = 0; i < dssv.length; i++) {
+    if (dssv[i].ma == sv.ma) {
       index = i;
     }
   }
   // cập nhật data tại vị trí index
-  dsnv[index] = nv;
-  renderDSNV();
+  dssv[index] = sv;
+  renderDSSV();
 }

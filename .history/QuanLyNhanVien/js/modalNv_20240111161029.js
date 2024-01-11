@@ -7,5 +7,5 @@ function NhanVien(tk, ten, email, password, ngayLam, luongCB, chucVu, gioLam,xep
   this.luongCB = luongCB;
   this.chucVu = chucVu;
   this.diemgioLamHoa = gioLam;
-  this.xepLoai = xepLoai
+  this.xepLoai = xep
 }

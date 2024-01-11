@@ -58,31 +58,21 @@ function xoaNv(id) {
   dsnv.splice(index, 1);
   renderDSNV();
 }
-function suaNv(id) {
+function suaSv(id) {
   var index;
-  for (var i = 0; i < dsnv.length; i++) {
-    if (dsnv[i].tk == id) {
+  for (var i = 0; i < dssv.length; i++) {
+    if (dssv[i].ma == id) {
       index = i;
     }
   }
   // từ index => lấy ra sv được click
-  var nv = dsnv[index];
+  var sv = dssv[index];
   // show thông tin lên form
-  document.getElementById("tknv").value = nv.tk;
-  document.getElementById("name").value = nv.ten;
-  document.getElementById("tbEmail").value = nv.email;
-  document.getElementById("tbChucVu").value = nv.chucVu;
-  document.getElementById("tbLuongCB").value = nv.luongCB;
-}
-function capNhatNv() {
-  var nv = layThongTinTuForm();
-  var index;
-  for (var i = 0; i < dsnv.length; i++) {
-    if (dsnv[i].tk == nv.tk) {
-      index = i;
-    }
-  }
-  // cập nhật data tại vị trí index
-  dsnv[index] = nv;
-  renderDSNV();
+  document.getElementById("tknv").value = sv.ma;
+  document.getElementById("name").value = sv.ten;
+  document.getElementById("txtPass").value = sv.matKhau;
+  document.getElementById("txtEmail").value = sv.email;
+  document.getElementById("txtDiemToan").value = sv.diemToan;
+  document.getElementById("txtDiemLy").value = sv.diemLy;
+  document.getElementById("txtDiemHoa").value = sv.diemHoa;
 }

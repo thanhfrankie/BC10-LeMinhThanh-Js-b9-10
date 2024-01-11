@@ -38,7 +38,7 @@ var nv = layThongTinTuForm()
   } else if (gioLam >= 176) {
     xepLoai = ` Nhân viên giỏi`;
   } else if (gioLam >= 160) {
-    xepLoai = ` Nhân viên khá`;
+    xepLoai.innerHTML = ` Nhân viên khá`;
   } else {
     xepLoai = ` Nhân viên trung bình`;
   }
@@ -56,33 +56,5 @@ function xoaNv(id) {
     }
   }
   dsnv.splice(index, 1);
-  renderDSNV();
-}
-function suaNv(id) {
-  var index;
-  for (var i = 0; i < dsnv.length; i++) {
-    if (dsnv[i].tk == id) {
-      index = i;
-    }
-  }
-  // từ index => lấy ra sv được click
-  var nv = dsnv[index];
-  // show thông tin lên form
-  document.getElementById("tknv").value = nv.tk;
-  document.getElementById("name").value = nv.ten;
-  document.getElementById("tbEmail").value = nv.email;
-  document.getElementById("tbChucVu").value = nv.chucVu;
-  document.getElementById("tbLuongCB").value = nv.luongCB;
-}
-function capNhatNv() {
-  var nv = layThongTinTuForm();
-  var index;
-  for (var i = 0; i < dsnv.length; i++) {
-    if (dsnv[i].tk == nv.tk) {
-      index = i;
-    }
-  }
-  // cập nhật data tại vị trí index
-  dsnv[index] = nv;
   renderDSNV();
 }

@@ -1,4 +1,4 @@
-function NhanVien(tk, ten, email, password, ngayLam, luongCB, chucVu, gioLam,xepLoai) {
+function NhanVien(tk, ten, email, password, ngayLam, luongCB, chucVu, gioLam,xep) {
   this.tk = tk;
   this.ten = ten;
   this.password = password;
@@ -7,5 +7,4 @@ function NhanVien(tk, ten, email, password, ngayLam, luongCB, chucVu, gioLam,xep
   this.luongCB = luongCB;
   this.chucVu = chucVu;
   this.diemgioLamHoa = gioLam;
-  this.xepLoai = xepLoai
 }

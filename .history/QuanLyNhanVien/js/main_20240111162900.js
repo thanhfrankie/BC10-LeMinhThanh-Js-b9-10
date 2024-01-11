@@ -78,7 +78,7 @@ function capNhatNv() {
   var nv = layThongTinTuForm();
   var index;
   for (var i = 0; i < dsnv.length; i++) {
-    if (dsnv[i].tk == nv.tk) {
+    if (dsnv[i].tk == sv.tk) {
       index = i;
     }
   }
