@@ -5,15 +5,14 @@ var arrayNv = JSON.parse(dataJson) || [];
 // duyệt mảng => convert object => object từ class
 for (var i = 0; i < arrayNv.length; i++) {
   var data = arrayNv[i];
-  var sv = new NhanVien(
-    arrayNv[i].tk,
+  var sv = new SinhVien(
+    arrayNv[i].ma,
     arrayNv[i].ten,
-    arrayNv[i].password,
+    arrayNv[i].matKhau,
     arrayNv[i].email,
-    arrayNv[i].ngayLam,
-    arrayNv[i].luongCB,
-    arrayNv[i].chucVu,
-    arrayNv[i].gioLam
+    arrayNv[i].diemToan,
+    arrayNv[i].diemLy,
+    arrayNv[i].diemHoa
   );
   dssv.push(sv);
 }

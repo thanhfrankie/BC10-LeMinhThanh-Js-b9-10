@@ -1,4 +1,4 @@
-function layThongTinTuForm() {
+function nhanVien() {
     var tk = document.getElementById("tknv").value;
     var ten = document.getElementById("name").value;
     var email = document.getElementById("tbEmail").value;

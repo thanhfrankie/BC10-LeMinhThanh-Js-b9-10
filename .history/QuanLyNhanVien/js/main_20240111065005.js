@@ -1,22 +1,10 @@
 var dsnv = [];
 var dataJson = localStorage.getItem("dsnv");
-console.log("JSON", dataJson);
-var arrayNv = JSON.parse(dataJson) || []; 
-// duyệt mảng => convert object => object từ class
-for (var i = 0; i < arrayNv.length; i++) {
-  var data = arrayNv[i];
-  var sv = new NhanVien(
-    arrayNv[i].tk,
-    arrayNv[i].ten,
-    arrayNv[i].password,
-    arrayNv[i].email,
-    arrayNv[i].ngayLam,
-    arrayNv[i].luongCB,
-    arrayNv[i].chucVu,
-    arrayNv[i].gioLam
-  );
-  dssv.push(sv);
-}
+console.log("JSON", dataJson); // này lúc đầu nó chưa có local nên là nó lỗi
+dsnv = JSON.parse(dataJson) || []; // trường hợp nó ko có thì sẽ trả về mảng rỗng, dạ, v la xong r dung k a
+// v sao hôm kia a Sỹ dạy là viết đoạn này lên trên dc a
+// ukm khúc đó nó hơi thíu xíu tại nó có local rồi nên nó vẫn đọc đc bình thường
+// fix lại thì dề thui
 renderDSNV();
 function renderDSNV() {
   var contentHTML = "";
@@ -37,7 +25,7 @@ function renderDSNV() {
   document.getElementById("tableDanhSach").innerHTML = contentHTML;
 }
 function themNguoiDung() {
-var nv = layThongTinTuForm()
+var nv = new nhanVien()
 
   if (chucVu === "Sếp") {
     tongLuong = luongCB * 3;
