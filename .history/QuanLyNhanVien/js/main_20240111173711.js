@@ -21,22 +21,7 @@ renderDSNV();
 function themNguoiDung() {
   var nv = layThongTinTuForm();
   dsnv.push(nv);
-  // em ko biết sao cái ô email lại nhận giá trị của ô password
-  // trong khi em ko show lên a @@
-  /**
-   * ròy chức năng thêm sai ròy
-   * @@ dạ 
-   * ủa sao nó ra lại rồi
-   * chắc phải f5 a ==> vậy là thêm bị sai ròy
-   * @@
-   * ủa sao giờ lại ko hiện luôn @@ nói chung là cái chỗ password đó có vấn đề hơi nặng a, trong khi nó là cột
-   */
-
-
-
-  // tổng lương 
-  // em cũng ko biết sai chỗ nào ạ @@
-  // và xếp loại 
+  // em ko biết sao cái ô email lại nhận giá trị của ô password trong khi em ko show lên a @@
   //
   if (nv.selectChucvu === "Sếp") {
     document.getElementById("tbChucVu").innerText = ` Sếp`;
@@ -49,7 +34,15 @@ function themNguoiDung() {
   }
  
   console.log(nv.gioLam)
-  
+  if (nv.gioLam >= 192) {
+    xepLoai = `Nhân viên xuất sắc`;
+  } else if (nv.gioLam >= 176) {
+    xepLoai = `Nhân viên giỏi`;
+  } else if (nv.gioLam >= 160) {
+    xepLoai = `Nhân viên khá`;
+  } else {
+    xepLoai = `Nhân viên trung bình`;
+  }
   var dataJson = JSON.stringify(dsnv);
   localStorage.setItem("dsnv", dataJson);
   renderDSNV();

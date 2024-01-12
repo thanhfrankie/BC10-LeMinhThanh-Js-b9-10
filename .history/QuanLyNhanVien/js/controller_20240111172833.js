@@ -9,8 +9,8 @@ function renderDSNV() {
                         <td>${data.email}</td>
                         <td>${data.ngayLam}</td>
                         <td>${data.selectChucvu}</td>
-                        <td>${data.tongLuong()}</td>
-                        <td>${data.xepLoai()}</td>
+                        <td>${data.luongCB}</td>
+                        <td>${data.xepLoai}</td>
                         <td>
                         <button
                         onclick="xoaNv('${data.tk}')"
@@ -30,12 +30,12 @@ function renderDSNV() {
 function layThongTinTuForm() {
   var tk = document.getElementById("tknv").value;
   var ten = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
+  var email = document.getElementById("tbEmail").value;
   var password = document.getElementById("password").value;
   var ngayLam = document.getElementById("datepicker").value;
-  var luongCB = document.getElementById("luongCB").value * 1;
-  var selectChucvu = document.getElementById("chucvu").value;
-  var gioLam = document.getElementById("gioLam").value * 1;
+  var luongCB = document.getElementById("tbLuongCB").value * 1;
+  var selectChucvu = document.getElementById("chucvu").value
+  var gioLam = document.getElementById("tbGiolam").value * 1;
   var tongLuong = 0;
   var xepLoai = "";
   var nv = {
@@ -47,32 +47,9 @@ function layThongTinTuForm() {
     luongCB: luongCB,
     selectChucvu: selectChucvu,
     gioLam: gioLam,
-    
     tongLuong: function () {
-      if (selectChucvu === "Sếp") {
-        tongLuong = luongCB * 3;
-        return tongLuong;
-      }
-      if (selectChucvu === "Trưởng phòng") {
-        tongLuong = luongCB * 2;
-        return tongLuong;
-      }
-      if (selectChucvu === "Nhân viên") {
-        tongLuong = luongCB * 1;
-        return tongLuong;
-      }
-    },
-    xepLoai: function () {
-      if (gioLam >= 192) {
-        xepLoai = `Nhân viên xuất sắc`;
-      } else if (gioLam >= 176) {
-        xepLoai = `Nhân viên giỏi`;
-      } else if (gioLam >= 160) {
-        xepLoai = `Nhân viên khá`;
-      } else {
-        xepLoai = `Nhân viên trung bình`;
-      }
-    },
+      
+    }
   };
   return nv;
 }
