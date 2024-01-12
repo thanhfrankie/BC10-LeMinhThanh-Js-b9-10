@@ -14,6 +14,7 @@ function NhanVien(
   this.password = password;
   this.email = email;
   this.ngayLam = ngayLam;
+  this.selectChucvu = selectChucvu;
   this.tongLuong = function () {
     if (selectChucvu === "Sếp") {
       tongLuong = luongCB * 3;
@@ -28,7 +29,6 @@ function NhanVien(
       return tongLuong;
     }
   };
-  this.selectChucvu = selectChucvu;
   this.gioLam = gioLam;
   this.xepLoai = function () {
     if (gioLam >= 192) {

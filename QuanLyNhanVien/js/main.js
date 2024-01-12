@@ -8,7 +8,6 @@ for (var i = 0; i < arrayNv.length; i++) {
   var sv = new NhanVien(
     arrayNv[i].tk,
     arrayNv[i].ten,
-    arrayNv[i].password,
     arrayNv[i].email,
     arrayNv[i].ngayLam,
     arrayNv[i].luongCB,
@@ -21,23 +20,6 @@ renderDSNV();
 function themNguoiDung() {
   var nv = layThongTinTuForm();
   dsnv.push(nv);
-  // em ko biết sao cái ô email lại nhận giá trị của ô password
-  // trong khi em ko show lên a @@
-  /**
-   * ròy chức năng thêm sai ròy
-   * @@ dạ 
-   * ủa sao nó ra lại rồi
-   * chắc phải f5 a ==> vậy là thêm bị sai ròy
-   * @@
-   * ủa sao giờ lại ko hiện luôn @@ nói chung là cái chỗ password đó có vấn đề hơi nặng a, trong khi nó là cột
-   */
-
-
-
-  // tổng lương 
-  // em cũng ko biết sai chỗ nào ạ @@
-  // và xếp loại 
-  //
   if (nv.selectChucvu === "Sếp") {
     document.getElementById("tbChucVu").innerText = ` Sếp`;
   }
@@ -47,9 +29,6 @@ function themNguoiDung() {
   if (nv.selectChucvu === "Nhân viên") {
     document.getElementById("tbChucVu").innerText = ` Nhân viên`;
   }
- 
-  console.log(nv.gioLam)
-  
   var dataJson = JSON.stringify(dsnv);
   localStorage.setItem("dsnv", dataJson);
   renderDSNV();
@@ -78,11 +57,12 @@ function suaNv(id) {
   // từ index => lấy ra sv được click
   var nv = dsnv[index];
   // show thông tin lên form
+
   document.getElementById("tknv").value = nv.tk;
   document.getElementById("name").value = nv.ten;
-  document.getElementById("tbEmail").value = nv.email;
-  document.getElementById("tbChucVu").value = nv.chucVu;
-  document.getElementById("tbLuongCB").value = nv.luongCB;
+  document.getElementById("email").value = nv.email;
+  document.getElementById("chucvu").value = nv.chucVu;
+  document.getElementById("luongCB").value = nv.luongCB;
 }
 function capNhatNv() {
   var nv = layThongTinTuForm();
