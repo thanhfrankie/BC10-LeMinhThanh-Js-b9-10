@@ -5,16 +5,16 @@ var arrayNv = JSON.parse(dataJson) || [];
 // duyệt mảng => convert object => object từ class
 for (var i = 0; i < arrayNv.length; i++) {
   var data = arrayNv[i];
-  var sv = new NhanVien(
+  var nv = new NhanVien(
     arrayNv[i].tk,
     arrayNv[i].ten,
     arrayNv[i].email,
     arrayNv[i].ngayLam,
-    arrayNv[i].luongCB,
     arrayNv[i].selectChucvu,
-    arrayNv[i].gioLam
+    arrayNv[i].tongLuong,
+    arrayNv[i].xepLoai,
   );
-  dsnv.push(sv);
+  dsnv.push(nv);
 }
 renderDSNV();
 function themNguoiDung() {

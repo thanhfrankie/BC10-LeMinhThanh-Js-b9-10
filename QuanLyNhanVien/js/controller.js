@@ -36,8 +36,6 @@ function layThongTinTuForm() {
   var luongCB = document.getElementById("luongCB").value * 1;
   var selectChucvu = document.getElementById("chucvu").value;
   var gioLam = document.getElementById("gioLam").value * 1;
-  var tongLuong = 0;
-  var xepLoai = "";
   var nv = {
     tk: tk,
     ten: ten,
@@ -47,8 +45,10 @@ function layThongTinTuForm() {
     luongCB: luongCB,
     selectChucvu: selectChucvu,
     gioLam: gioLam,
-    
+
     tongLuong: function () {
+      var tongLuong = 0;
+
       if (selectChucvu === "Sếp") {
         tongLuong = luongCB * 3;
         return tongLuong;
@@ -63,14 +63,20 @@ function layThongTinTuForm() {
       }
     },
     xepLoai: function () {
+      var xepLoai = "";
+
       if (gioLam >= 192) {
         xepLoai = `Nhân viên xuất sắc`;
+        return xepLoai;
       } else if (gioLam >= 176) {
         xepLoai = `Nhân viên giỏi`;
+        return xepLoai;
       } else if (gioLam >= 160) {
         xepLoai = `Nhân viên khá`;
+        return xepLoai;
       } else {
         xepLoai = `Nhân viên trung bình`;
+        return xepLoai;
       }
     },
   };
