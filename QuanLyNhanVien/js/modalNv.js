@@ -35,12 +35,16 @@ function NhanVien(
   this.xepLoai = function () {
     if (this.gioLam >= 192) {
       xepLoai = `Nhân viên xuất sắc`;
+      return xepLoai;
     } else if (this.gioLam >= 176) {
       xepLoai = `Nhân viên giỏi`;
+      return xepLoai;
     } else if (this.gioLam >= 160) {
       xepLoai = `Nhân viên khá`;
+      return xepLoai;
     } else {
       xepLoai = `Nhân viên trung bình`;
+      return xepLoai;
     }
   };
 }

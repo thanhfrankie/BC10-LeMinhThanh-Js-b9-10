@@ -1,7 +1,7 @@
-function renderDSNV() {
+function renderDSNV(arr) {
   var contentHTML = "";
-  for (var i = 0; i < dsnv.length; i++) {
-    var data = dsnv[i];
+  for (var i = 0; i < arr.length; i++) {
+    var data = arr[i];
     var trString = `
         <tr>
                         <td>${data.tk}</td>

@@ -12,14 +12,19 @@ for (var i = 0; i < arrayNv.length; i++) {
     arrayNv[i].ngayLam,
     arrayNv[i].selectChucvu,
     arrayNv[i].tongLuong,
-    arrayNv[i].xepLoai,
+    arrayNv[i].xepLoai
   );
   dsnv.push(nv);
 }
-renderDSNV();
+renderDSNV(dsnv);
 function themNguoiDung() {
   var nv = layThongTinTuForm();
+  var isValid = true;
+  isValid = kiemTraRong(nv.tk, "tbTKNV") && kiemTraTrung(nv.tk, dsnv, "tbTKNV");
+  isValid =
+    isValid & (kiemTraRong(nv.email, "tbEmail") && kiemTraEmail(nv.email));
   dsnv.push(nv);
+  isValid &= kiemTraRong(nv.ten, "tbTen");
   if (nv.selectChucvu === "Sếp") {
     document.getElementById("tbChucVu").innerText = ` Sếp`;
   }
@@ -31,7 +36,7 @@ function themNguoiDung() {
   }
   var dataJson = JSON.stringify(dsnv);
   localStorage.setItem("dsnv", dataJson);
-  renderDSNV();
+  renderDSNV(dsnv);
 }
 function xoaNv(id) {
   // splice(viTriCanXoa,soLuongCanXoa)
@@ -45,7 +50,7 @@ function xoaNv(id) {
   dsnv.splice(index, 1);
   var dataJson = JSON.stringify(dsnv);
   localStorage.setItem("dsnv", dataJson);
-  renderDSNV();
+  renderDSNV(dsnv);
 }
 function suaNv(id) {
   var index;
@@ -61,8 +66,10 @@ function suaNv(id) {
   document.getElementById("tknv").value = nv.tk;
   document.getElementById("name").value = nv.ten;
   document.getElementById("email").value = nv.email;
-  document.getElementById("chucvu").value = nv.chucVu;
+  document.getElementById("password").value = nv.password;
+  document.getElementById("chucvu").value = nv.selectChucvu;
   document.getElementById("luongCB").value = nv.luongCB;
+  document.getElementById("gioLam").value = nv.gioLam;
 }
 function capNhatNv() {
   var nv = layThongTinTuForm();
@@ -74,5 +81,17 @@ function capNhatNv() {
   }
   // cập nhật data tại vị trí index
   dsnv[index] = nv;
-  renderDSNV();
+  var dataJson = JSON.stringify(dsnv);
+  localStorage.setItem("dsnv", dataJson);
+  renderDSNV(dsnv);
+}
+function timKiem() {
+  var resultList = [];
+  var searchInput = document.getElementById("searchName");
+  var searchTerm = searchInput.value.toLowerCase();
+  var filterData = dsnv.filter((item) =>
+    item.toLowerCase().includes(searchTerm)
+  );
+  resultList.push(filterData);
+  renderDSNV(resultList);
 }
