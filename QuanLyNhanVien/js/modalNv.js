@@ -6,9 +6,9 @@ function NhanVien(
   ngayLam,
   luongCB,
   selectChucvu,
-  // tongLuong,
-  gioLam
-  // xepLoai,
+  tongLuong,
+  gioLam,
+  xepLoai,
 ) {
   this.tk = tk;
   this.ten = ten;
@@ -33,13 +33,13 @@ function NhanVien(
   };
   this.gioLam = gioLam;
   this.xepLoai = function () {
-    if (this.gioLam >= 192) {
+    if (gioLam >= 192) {
       xepLoai = `Nhân viên xuất sắc`;
       return xepLoai;
-    } else if (this.gioLam >= 176) {
+    } else if (gioLam >= 176) {
       xepLoai = `Nhân viên giỏi`;
       return xepLoai;
-    } else if (this.gioLam >= 160) {
+    } else if (gioLam >= 160) {
       xepLoai = `Nhân viên khá`;
       return xepLoai;
     } else {

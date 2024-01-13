@@ -15,6 +15,7 @@ for (var i = 0; i < arrayNv.length; i++) {
     arrayNv[i].luongCB,
     arrayNv[i].selectChucvu,
     arrayNv[i].tongLuong,
+    arrayNv[i].gioLam,
     arrayNv[i].xepLoai
   );
   dsnv.push(nv);
@@ -53,8 +54,7 @@ function xoaNv(id) {
     }
   }
   dsnv.splice(index, 1);
-  var dataJson = JSON.stringify(dsnv);
-  localStorage.setItem("dsnv", dataJson);
+
   renderDSNV(dsnv);
 }
 function suaNv(id) {
@@ -66,6 +66,8 @@ function suaNv(id) {
   }
   // từ index => lấy ra sv được click
   var nv = dsnv[index];
+  var dataJson = JSON.stringify(dsnv);
+  localStorage.setItem("dsnv", dataJson);
   // show thông tin lên form
 
   document.getElementById("tknv").value = nv.tk;
