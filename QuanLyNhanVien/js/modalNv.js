@@ -6,9 +6,9 @@ function NhanVien(
   ngayLam,
   luongCB,
   selectChucvu,
-  tongLuong,
-  gioLam,
-  xepLoai,
+  // tongLuong,
+  gioLam
+  // xepLoai,
 ) {
   this.tk = tk;
   this.ten = ten;
