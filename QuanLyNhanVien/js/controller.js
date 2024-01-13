@@ -82,26 +82,26 @@ function layThongTinTuForm() {
   };
   return nv;
 }
-// function layDuLieuLocal() {
-//   var dataJson = localStorage.getItem("dsnv");
-//   var arrayNv = JSON.parse(dataJson) || [];
-//   // duyệt mảng => convert object => object từ class
-//   for (var i = 0; i < arrayNv.length; i++) {
-//     var data = arrayNv[i];
-//     console.log("first", arrayNv[i].selectChucvu);
-//     var nv = new NhanVien(
-//       arrayNv[i].tk,
-//       arrayNv[i].ten,
-//       arrayNv[i].email,
-//       "",
-//       arrayNv[i].ngayLam,
-//       // trong local phai co luong CB
-//       arrayNv[i].luongCB,
-//       arrayNv[i].selectChucvu,
-//       arrayNv[i].tongLuong,
-//       arrayNv[i].xepLoai
-//     );
-//     dsnv.push(nv);
-//   }
-//   return dsnv;
-// }
+function layDuLieuLocal() {
+  var dataJson = localStorage.getItem("dsnv");
+  var arrayNv = JSON.parse(dataJson) || [];
+  // duyệt mảng => convert object => object từ class
+  for (var i = 0; i < arrayNv.length; i++) {
+    var data = arrayNv[i];
+    var nv = new NhanVien(
+      arrayNv[i].tk,
+      arrayNv[i].ten,
+      arrayNv[i].email,
+      "",
+      arrayNv[i].ngayLam,
+      // trong local phai co luong CB
+      arrayNv[i].luongCB,
+      arrayNv[i].selectChucvu,
+      arrayNv[i].tongLuong,
+      arrayNv[i].gioLam,
+      arrayNv[i].xepLoai
+    );
+    dsnv.push(nv);
+  }
+  return dsnv;
+}
